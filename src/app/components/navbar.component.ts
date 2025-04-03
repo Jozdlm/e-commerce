@@ -9,7 +9,7 @@ import { Pages } from '@app/pages';
   selector: 'app-navbar',
   imports: [RouterModule, SvgIconComponent],
   template: `
-    <nav class="w-full">
+    <nav class="w-full mb-4">
       <div
         class="mx-auto flex w-[90%] max-w-[1200px] items-center justify-between py-3 border-b border-gray-300"
       >

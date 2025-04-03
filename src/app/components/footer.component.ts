@@ -22,20 +22,15 @@ import { Pages } from '@app/pages';
         </div>
         <div>
           <div class="flex justify-end gap-x-6">
-            <a
-              href="https://www.facebook.com/librerialajoya"
-              target="_blank"
-              rel="noopener"
-              class="text-sm font-medium"
-              >Facebook</a
-            >
-            <a
-              href="https://www.instagram.com/librerialajoya/"
-              target="_blank"
-              rel="noopener"
-              class="text-sm font-medium"
-              >Instagram</a
-            >
+            @for (item of socialMediaLinks; track item.link) {
+              <a
+                [href]="item.link"
+                target="_blank"
+                rel="noopener"
+                class="text-sm font-medium"
+                >{{ item.name }}</a
+              >
+            }
           </div>
           <p class="text-sm">
             © {{ currentYear }} Todos los derechos reservados
@@ -49,4 +44,8 @@ export class FooterComponent {
   public currentYear: number = new Date().getFullYear();
   public businessName: string = BUSINESS_NAME;
   public pages = Pages;
+  public socialMediaLinks: { link: string; name: string }[] = [
+    { link: 'https://www.instagram.com/librerialajoya/', name: 'Instagram' },
+    { link: 'https://www.facebook.com/librerialajoya', name: 'Facebook' },
+  ];
 }
